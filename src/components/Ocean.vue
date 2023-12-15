@@ -2,7 +2,7 @@
   <nav 
     class="font-sans fixed flex flex-row justify-between items-center w-full px-2 "
   >
-    <div><img class="w-10 h-10 cursor-pointer" @click=" toUrl('/')" src="../src/assets/img/catLogo.png" alt=""></div>
+    <div><img class="w-10 h-10 cursor-pointer" @click=" toUrl('/')" src="../src/assets/img/cat-logo.png" alt=""></div>
     <div>
       <ul
       class="flex flex-row"
