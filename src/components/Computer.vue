@@ -5,7 +5,7 @@
     >
       <div>
         <router-link to="">
-          <img class="w-10 h-10 cursor-pointer" @click=" toPage('/')" src="src/assets/img/catLogo.png" alt="">
+          <img class="w-10 h-10 cursor-pointer" @click=" toPage('/')" src="../src/assets/img/catLogo.png" alt="">
         </router-link>
       </div>
       <div>
