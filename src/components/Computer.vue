@@ -5,7 +5,7 @@
     >
       <div>
         <router-link to="">
-          <img class="w-10 h-10 cursor-pointer" @click=" toPage('/')" src="/src/assets/img/catLogo.png" alt="">
+          <img class="w-10 h-10 cursor-pointer" @click=" toPage('/')" src="src/assets/img/catLogo.png" alt="">
         </router-link>
       </div>
       <div>
@@ -26,7 +26,7 @@
           <button class="mb-6 px-2 h-10 border-2 font-bold border-black bg-gray cursor-pointer hover:bg-slate-400" @click="toUrl('https://apple.com')">Clone me on Webflow</button>
         </article>
         <aside class="flex justify-end w-[30%]">
-          <img  class="w-[360x] h-[240px] " :src="`/src/assets/img/a2.jpg`" alt="">
+          <img  class="w-[360x] h-[240px] " :src="`src/assets/img/a2.jpg`" alt="">
         </aside>
       </div>
       <div class="links">
@@ -34,7 +34,7 @@
           <hr >
           <div v-for="item in links" class="item">
             <span class="font-bold cursor-pointer" @click="toUrl(item.url)">{{ item.name }}</span>
-            <img class="h-5 w-5 cursor-pointer" src="/src/assets/img/right-up.png" alt="" @click="toUrl(item.url)">
+            <img class="h-5 w-5 cursor-pointer" src="src/assets/img/right-up.png" alt="" @click="toUrl(item.url)">
           </div>
           <hr>
 
@@ -53,10 +53,10 @@
             <swiper-slide v-for="item in swiperList">
               <div class="swiper-inner min-w-[400px] min-h-[400px] left-0">
               <div class="title"> 
-                <div class="icon ml-4 mr-20"><img class=" w-10 h-10" src="/src/assets/img/point.png" alt=""></div>
+                <div class="icon ml-4 mr-20"><img class=" w-10 h-10" src="src/assets/img/point.png" alt=""></div>
                 <div class="text text-l font-bold">{{item.title}}</div>
               </div>
-              <div class="fig h-[20%] overflow-hidden"><img class="w-full" :src="`/src/assets/img/${item.img}`" alt="qqq"></div>
+              <div class="fig h-[20%] overflow-hidden"><img class="w-full" :src="`src/assets/img/${item.img}`" alt="qqq"></div>
               <div class="content">
                 <article class="flex flex-col  items-start">
                   <h1 class="font-black text-xl mb-6 tracking-widest">{{ item.h1 }}</h1>
@@ -66,23 +66,6 @@
               </div>
               </div>
             </swiper-slide>
-            <!-- <swiper-slide>
-              <div class="swiper-inner min-w-[400px] min-h-[400px] left-0">
-              <div class="title"> 
-                <div class="icon ml-4 mr-20"><img class=" w-10 h-10" src="../assets/img/point.png" alt=""></div>
-                <div class="text text-l font-bold">2020-20-20-project.html</div>
-              </div>
-              <div class="fig h-[20%] overflow-hidden"><img class="w-full" src="../assets/img/b2.jpg" alt=""></div>
-              <div class="content">
-                <article class="flex flex-col  items-start">
-                  <h1 class="font-black text-xl mb-6 tracking-widest">{{ 'Possimus' }}</h1>
-                  <span class=" text-start font-bold mb-6" v-html="'I\'m a free retro Webflow template made byI\'m a free retro Webflow template made byI\'m a free retro Webflow template made byI\'m a free retro Webflow template made byI\'m a free retro Webflow template made by'"></span>
-                  <button class="px-2 h-10 border-2 font-bold border-black bg-gray">Clone me on Webflow</button>
-                </article>
-              </div>
-              </div>
-            </swiper-slide> -->
-            
         </swiper>
 
       </div>
@@ -95,7 +78,6 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { useRouter } from 'vue-router';
 import { FreeMode, Pagination } from 'swiper/modules';
-// import { Autoplay } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -210,6 +192,4 @@ hr {
   background-color: #fff;
   border-top: 2px solid black;
 }
-
-
 </style>
