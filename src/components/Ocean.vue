@@ -2,7 +2,7 @@
   <nav 
     class="font-sans fixed flex flex-row justify-between items-center w-full px-2 "
   >
-    <div><img class="w-10 h-10 cursor-pointer" @click=" toUrl('/')" src="src/assets/img/catLogo.png" alt=""></div>
+    <div><img class="w-10 h-10 cursor-pointer" @click=" toUrl('/')" src="../src/assets/img/catLogo.png" alt=""></div>
     <div>
       <ul
       class="flex flex-row"
@@ -10,7 +10,7 @@
         <li v-for= "li in navList" class="li" @click=" toUrl(li.url)">{{ li.name }}</li>
       </ul>
     </div>
-    <div><router-link to=""><img class="w-5 h-5 mr-2" @click="toPage('Computer')" src="src/assets/img/menu.png" alt=""></router-link></div>
+    <div><router-link to=""><img class="w-5 h-5 mr-2" @click="toPage('Computer')" src="../src/assets/img/menu.png" alt=""></router-link></div>
   </nav>
   <main class="font-sans w-full ">
     <div
@@ -35,7 +35,7 @@
     
     >
       <aside>
-        <img class="mr-[300px]" :src="`src/assets/img/${area.img}.jpg`" alt="">
+        <img class="mr-[300px]" :src="`../src/assets/img/${area.img}.jpg`" alt="">
       </aside>
       <article class="article left items-end">
         <h1 class="font-black mb-6 tracking-widest">{{ area.title }}</h1>
