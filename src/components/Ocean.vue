@@ -1,52 +1,63 @@
 <template>
   <nav 
-    class="font-sans fixed flex flex-row justify-between items-center w-full px-2 "
+    class="font-sansflex flex flex-row  items-center w-full  "
+    :class="isMobile ? 'justify-center' : 'justify-between px-2'"
   >
-    <div><img class="w-10 h-10 cursor-pointer" @click=" toUrl('/')" src="../src/assets/img/cat-logo.png" alt=""></div>
+    <div><img class="w-10 h-10 ml-2 cursor-pointer" @click="toUrl('/')" src="@/assets/img/cat-logo.png" alt=""></div>
     <div>
       <ul
       class="flex flex-row"
       >
-        <li v-for= "li in navList" class="li" @click=" toUrl(li.url)">{{ li.name }}</li>
+        <li v-for= "li in navList" class="li" :class="isMobile ? 'w-[60px] h-[20px] mr-2'  : 'w-[100px] h-[40px]'" @click=" toUrl(li.url)">{{ li.name }}</li>
       </ul>
     </div>
-    <div><router-link to=""><img class="w-5 h-5 mr-2" @click="toPage('Computer')" src="../src/assets/img/menu.png" alt=""></router-link></div>
+    <div><router-link to=""><img class="w-5 h-5 mr-2" @click="toPage('Computer')" src="@/assets/img/menu.png" alt=""></router-link></div>
   </nav>
   <main class="font-sans w-full ">
     <div
     v-for="area in picList"
     >
     <div 
-    v-if="area.key === 'right'"
-    class="content  bg-zinc-800 text-white"
+      v-if="area.key === 'right'"
+      class="content  bg-zinc-800 text-white"
     >
-      <article class="article  right mr-[300px] items-start">
+      <article 
+        class="article right  "
+        :class="isMobile ? ' items-center':'mr-[300px] items-start'"
+      >
         <h1 class="font-black mb-6 tracking-widest" >{{ area.title }}</h1>
-        <span class="mb-6" v-html="area.dec"></span>
+        <span 
+          class="mb-6" 
+          :class="isMobile ? 'text-center' : ''"
+          v-html="area.dec"/>
         <button class="mb-6 px-8 h-10 border-2 border-white rounded bg-black text-white ">favorite</button>
       </article>
       <aside>
-        <img :src="`srcassets/img/${area.img}.jpg`" alt="">
+        <img :class="isMobile ? 'w-[80%]' : '' " :src="`../src/assets/img/${area.img}.png`" alt="">
       </aside>
     </div>
     <div 
-    v-if="area.key === 'left'"
-    class="content  bg-white text-black"
-    
+      v-if="area.key === 'left'"
+      class="content  bg-white text-black"
     >
       <aside>
-        <img class="mr-[300px]" :src="`../src/assets/img/${area.img}.jpg`" alt="">
+        <img 
+          :class="isMobile ? 'w-[80%] ml-8':'mr-[300px]'"
+          :src="`../src/assets/img/${area.img}.png`" alt="">
       </aside>
-      <article class="article left items-end">
+      <article 
+        class="article left "
+        :class="isMobile ? 'items-center' : 'items-end'"
+      >
         <h1 class="font-black mb-6 tracking-widest">{{ area.title }}</h1>
-        <span class="mb-6 text-end" v-html="area.dec"></span>
+        <span 
+        :class=" isMobile? 'text-center' : 'mb-6 text-end'" 
+        v-html="area.dec"/>
         <button class="mb-6 px-8 h-10 border-2 rounded border-black bg-white">checkout{{ width }}</button>
       </article>
     </div>
 
     </div>
-    <div v-if="isMobile">pppppppppppppppppppppppppppppppppppp</div>
-    {{ width }}
   </main>
 </template>
 
@@ -56,7 +67,7 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 
-const isMobile = computed(() => width.value < 768 );
+const isMobile = computed(() => width.value < 800 );
 const width = ref(window.innerWidth);
 
 const picList = [
@@ -129,11 +140,8 @@ nav{
 }
 
 li{
-  width: 100px;
-  height: 40px;
   border-radius: 4px;
   list-style-type: none;
-  margin: 0 12px 0;
   display: flex;
   justify-content: center;
   align-items: center;
